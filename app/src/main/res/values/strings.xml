@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">GeoCoder</string>
+    <string name="enter_a_city_or_location">Enter a city or location</string>
+    <string name="search">Search</string>
 </resources>
