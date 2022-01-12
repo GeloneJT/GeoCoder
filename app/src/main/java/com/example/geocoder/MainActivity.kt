@@ -41,14 +41,18 @@ class MainActivity : AppCompatActivity() {
                 Manifest.permission.ACCESS_FINE_LOCATION,
                 Manifest.permission.ACCESS_COARSE_LOCATION
             ),
-            111
+            1
         )
     }
 
     private fun fetchLocation() {
-//        val location = binding.enteredDestination.text.toString()
-//        val geocoder = Geocoder(this, Locale.getDefault())
-//        val fromLocationName = geocoder.getFromLocationName(location, 1)
+        val locationEntered = binding.enteredDestination.text.toString()
+        val geocoder = Geocoder(this, Locale.getDefault())
+        val fromLocationName = geocoder.getFromLocationName(locationEntered, 1)
+        val location = fromLocationName[0]
+        "Latitude: ${location.latitude}\n Longitude: ${location.longitude}".also {
+            binding.coordinates.text = it
+        }
     }
 
     private fun handleKeyEvent(view: View, keyCode: Int): Boolean {
